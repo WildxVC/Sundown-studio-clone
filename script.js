@@ -80,30 +80,36 @@ var swiper = new Swiper(".mySwiper", {
     // centeredSlides: true,
     spaceBetween: 30,
     // grabCursor: true,
-    mousewheel:true,
+    mousewheel: true,
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
     },
-  });
+});
 
-  var sliderHolder = document.querySelector('.moving-slider-holder');
-  var customCursor = document.querySelector('.custom-cursor');
+var sliderHolder = document.querySelector('.moving-slider-holder');
+var customCursor = document.querySelector('.custom-cursor');
 
-  sliderHolder.addEventListener('mouseenter', function() {
+sliderHolder.addEventListener('mouseenter', function () {
     // Show the custom cursor and add the slider-cursor class when entering the slider area
     customCursor.style.display = 'block';
     sliderHolder.classList.add('slider-cursor');
-  });
+});
 
-  sliderHolder.addEventListener('mouseleave', function() {
+sliderHolder.addEventListener('mouseleave', function () {
     // Hide the custom cursor and remove the slider-cursor class when leaving the slider area
     customCursor.style.display = 'none';
     sliderHolder.classList.remove('slider-cursor');
-  });
+});
 
-  sliderHolder.addEventListener('mousemove', function(event) {
+sliderHolder.addEventListener('mousemove', function (event) {
     // Update the position of the custom cursor based on the mouse movements inside the slider area
     customCursor.style.left = event.pageX + 'px';
     customCursor.style.top = event.pageY + 'px';
-  });
+});
+
+
+var loader = document.querySelector("#loader");
+setTimeout(function () {
+    loader.style.top = "-100%";
+}, 4000);
